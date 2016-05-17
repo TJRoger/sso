@@ -127,10 +127,14 @@ There is an example server and two example brokers. One with normal redirects an
 To proof it's working you should setup the server and two or more brokers, each on their own machine and their own
 (sub)domain. However you can also run both server and brokers on your own machine, simply to test it out.
 
-    php -S localhost:9000 -t examples/server/
-    export SSO_SERVER=http://localhost:9000 SSO_BROKER_ID=Alice SSO_BROKER_SECRET=8iwzik1bwd; php -S localhost:9001 -t examples/broker/
-    export SSO_SERVER=http://localhost:9000 SSO_BROKER_ID=Greg SSO_BROKER_SECRET=7pypoox2pc; php -S localhost:9002 -t examples/broker/
-    export SSO_SERVER=http://localhost:9000 SSO_BROKER_ID=Julias SSO_BROKER_SECRET=ceda63kmhp; php -S localhost:9003 -t examples/ajax-broker/
+    php -S localhost:8083 -t examples/server/
+    export SSO_SERVER=http://dev.zingfront.cn:8083 SSO_BROKER_ID=Alice SSO_BROKER_SECRET=8iwzik1bwd; php -S 0.0.0.0:8084 -t examples/broker/
+    export SSO_SERVER=http://dev.zingfront.cn:8083 SSO_BROKER_ID=Greg SSO_BROKER_SECRET=7pypoox2pc; php -S 0.0.0.0:8085 -t examples/broker/
+    export SSO_SERVER=http://dev.zingfront.cn:8083 SSO_BROKER_ID=Julias SSO_BROKER_SECRET=ceda63kmhp; php -S 0.0.0.0:8086 -t examples/ajax-broker/
+
+    username/password
+    jackie/jackie123
+    john/john123
 
 Now open some tabs and visit http://localhost:9001, http://localhost:9002 and http://localhost:9003.
 
